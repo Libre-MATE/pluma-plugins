@@ -16,47 +16,54 @@
  *
  * You should have received a copy of the GNU General Public License
  * along with this program; if not, write to the Free Software
- * Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301, USA.
+ * Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301,
+ * USA.
  *
  */
 
 #ifndef __PLUMA_BOOKMARKS_PLUGIN_H__
 #define __PLUMA_BOOKMARKS_PLUGIN_H__
 
-#include <glib.h>
 #include <glib-object.h>
+#include <glib.h>
 #include <libpeas/peas-extension-base.h>
 #include <libpeas/peas-object-module.h>
 
 G_BEGIN_DECLS
 
-#define PLUMA_TYPE_BOOKMARKS_PLUGIN		(pluma_bookmarks_plugin_get_type ())
-#define PLUMA_BOOKMARKS_PLUGIN(o)		(G_TYPE_CHECK_INSTANCE_CAST ((o), PLUMA_TYPE_BOOKMARKS_PLUGIN, PlumaBookmarksPlugin))
-#define PLUMA_BOOKMARKS_PLUGIN_CLASS(k)		(G_TYPE_CHECK_CLASS_CAST((k), PLUMA_TYPE_BOOKMARKS_PLUGIN, PlumaBookmarksPluginClass))
-#define PLUMA_IS_BOOKMARKS_PLUGIN(o)		(G_TYPE_CHECK_INSTANCE_TYPE ((o), PLUMA_TYPE_ADVANCED_EDITING_PLUGIN))
-#define PLUMA_IS_BOOKMARKS_PLUGIN_CLASS(k)	(G_TYPE_CHECK_CLASS_TYPE ((k), PLUMA_TYPE_BOOKMARKS_PLUGIN))
-#define PLUMA_BOOKMARKS_PLUGIN_GET_CLASS(o)	(G_TYPE_INSTANCE_GET_CLASS ((o), PLUMA_TYPE_BOOKMARKS_PLUGIN, PlumaBookmarksPluginClass))
+#define PLUMA_TYPE_BOOKMARKS_PLUGIN (pluma_bookmarks_plugin_get_type())
+#define PLUMA_BOOKMARKS_PLUGIN(o)                               \
+  (G_TYPE_CHECK_INSTANCE_CAST((o), PLUMA_TYPE_BOOKMARKS_PLUGIN, \
+                              PlumaBookmarksPlugin))
+#define PLUMA_BOOKMARKS_PLUGIN_CLASS(k)                      \
+  (G_TYPE_CHECK_CLASS_CAST((k), PLUMA_TYPE_BOOKMARKS_PLUGIN, \
+                           PlumaBookmarksPluginClass))
+#define PLUMA_IS_BOOKMARKS_PLUGIN(o) \
+  (G_TYPE_CHECK_INSTANCE_TYPE((o), PLUMA_TYPE_ADVANCED_EDITING_PLUGIN))
+#define PLUMA_IS_BOOKMARKS_PLUGIN_CLASS(k) \
+  (G_TYPE_CHECK_CLASS_TYPE((k), PLUMA_TYPE_BOOKMARKS_PLUGIN))
+#define PLUMA_BOOKMARKS_PLUGIN_GET_CLASS(o)                    \
+  (G_TYPE_INSTANCE_GET_CLASS((o), PLUMA_TYPE_BOOKMARKS_PLUGIN, \
+                             PlumaBookmarksPluginClass))
 
-typedef struct _PlumaBookmarksPlugin		PlumaBookmarksPlugin;
-typedef struct _PlumaBookmarksPluginPrivate	PlumaBookmarksPluginPrivate;
-typedef struct _PlumaBookmarksPluginClass	PlumaBookmarksPluginClass;
+typedef struct _PlumaBookmarksPlugin PlumaBookmarksPlugin;
+typedef struct _PlumaBookmarksPluginPrivate PlumaBookmarksPluginPrivate;
+typedef struct _PlumaBookmarksPluginClass PlumaBookmarksPluginClass;
 
-struct _PlumaBookmarksPlugin
-{
-	PeasExtensionBase parent_instance;
+struct _PlumaBookmarksPlugin {
+  PeasExtensionBase parent_instance;
 
-	/*< private >*/
-	PlumaBookmarksPluginPrivate *priv;
+  /*< private >*/
+  PlumaBookmarksPluginPrivate *priv;
 };
 
-struct _PlumaBookmarksPluginClass
-{
-	PeasExtensionBaseClass parent_class;
+struct _PlumaBookmarksPluginClass {
+  PeasExtensionBaseClass parent_class;
 };
 
-GType			pluma_bookmarks_plugin_get_type	(void) G_GNUC_CONST;
+GType pluma_bookmarks_plugin_get_type(void) G_GNUC_CONST;
 
-G_MODULE_EXPORT void	peas_register_types		(PeasObjectModule *module);
+G_MODULE_EXPORT void peas_register_types(PeasObjectModule *module);
 
 G_END_DECLS
 

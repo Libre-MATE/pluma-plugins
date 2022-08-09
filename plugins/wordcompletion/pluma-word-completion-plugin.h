@@ -20,39 +20,47 @@
 #ifndef __PLUMA_WORD_COMPLETION_PLUGIN_H__
 #define __PLUMA_WORD_COMPLETION_PLUGIN_H__
 
-#include <glib.h>
 #include <glib-object.h>
+#include <glib.h>
 #include <libpeas/peas-extension-base.h>
 #include <libpeas/peas-object-module.h>
 
 G_BEGIN_DECLS
 
-#define PLUMA_TYPE_WORD_COMPLETION_PLUGIN          (pluma_word_completion_plugin_get_type ())
-#define PLUMA_WORD_COMPLETION_PLUGIN(o)            (G_TYPE_CHECK_INSTANCE_CAST ((o), PLUMA_TYPE_WORD_COMPLETION_PLUGIN, PlumaWordCompletionPlugin))
-#define PLUMA_WORD_COMPLETION_PLUGIN_CLASS(k)      (G_TYPE_CHECK_CLASS_CAST((k), PLUMA_TYPE_WORD_COMPLETION_PLUGIN, PlumaWordCompletionPluginClass))
-#define PLUMA_IS_WORD_COMPLETION_PLUGIN(o)         (G_TYPE_CHECK_INSTANCE_TYPE ((o), PLUMA_TYPE_WORD_COMPLETION_PLUGIN))
-#define PLUMA_IS_WORD_COMPLETION_PLUGIN_CLASS(k)   (G_TYPE_CHECK_CLASS_TYPE ((k), PLUMA_TYPE_WORD_COMPLETION_PLUGIN))
-#define PLUMA_WORD_COMPLETION_PLUGIN_GET_CLASS(o)  (G_TYPE_INSTANCE_GET_CLASS ((o), PLUMA_TYPE_WORD_COMPLETION_PLUGIN, PlumaWordCompletionPluginClass))
+#define PLUMA_TYPE_WORD_COMPLETION_PLUGIN \
+  (pluma_word_completion_plugin_get_type())
+#define PLUMA_WORD_COMPLETION_PLUGIN(o)                               \
+  (G_TYPE_CHECK_INSTANCE_CAST((o), PLUMA_TYPE_WORD_COMPLETION_PLUGIN, \
+                              PlumaWordCompletionPlugin))
+#define PLUMA_WORD_COMPLETION_PLUGIN_CLASS(k)                      \
+  (G_TYPE_CHECK_CLASS_CAST((k), PLUMA_TYPE_WORD_COMPLETION_PLUGIN, \
+                           PlumaWordCompletionPluginClass))
+#define PLUMA_IS_WORD_COMPLETION_PLUGIN(o) \
+  (G_TYPE_CHECK_INSTANCE_TYPE((o), PLUMA_TYPE_WORD_COMPLETION_PLUGIN))
+#define PLUMA_IS_WORD_COMPLETION_PLUGIN_CLASS(k) \
+  (G_TYPE_CHECK_CLASS_TYPE((k), PLUMA_TYPE_WORD_COMPLETION_PLUGIN))
+#define PLUMA_WORD_COMPLETION_PLUGIN_GET_CLASS(o)                    \
+  (G_TYPE_INSTANCE_GET_CLASS((o), PLUMA_TYPE_WORD_COMPLETION_PLUGIN, \
+                             PlumaWordCompletionPluginClass))
 
-typedef struct _PlumaWordCompletionPlugin           PlumaWordCompletionPlugin;
-typedef struct _PlumaWordCompletionPluginPrivate    PlumaWordCompletionPluginPrivate;
-typedef struct _PlumaWordCompletionPluginClass      PlumaWordCompletionPluginClass;
+typedef struct _PlumaWordCompletionPlugin PlumaWordCompletionPlugin;
+typedef struct _PlumaWordCompletionPluginPrivate
+    PlumaWordCompletionPluginPrivate;
+typedef struct _PlumaWordCompletionPluginClass PlumaWordCompletionPluginClass;
 
-struct _PlumaWordCompletionPlugin
-{
-    PeasExtensionBase parent_instance;
+struct _PlumaWordCompletionPlugin {
+  PeasExtensionBase parent_instance;
 
-    PlumaWordCompletionPluginPrivate *priv;
+  PlumaWordCompletionPluginPrivate *priv;
 };
 
-struct _PlumaWordCompletionPluginClass
-{
-    PeasExtensionBaseClass parent_class;
+struct _PlumaWordCompletionPluginClass {
+  PeasExtensionBaseClass parent_class;
 };
 
-GType                   pluma_word_completion_plugin_get_type    (void) G_GNUC_CONST;
+GType pluma_word_completion_plugin_get_type(void) G_GNUC_CONST;
 
-G_MODULE_EXPORT void    peas_register_types                      (PeasObjectModule *module);
+G_MODULE_EXPORT void peas_register_types(PeasObjectModule *module);
 
 G_END_DECLS
 
