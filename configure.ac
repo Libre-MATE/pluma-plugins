@@ -9,9 +9,9 @@ m4_define(pluma_plugins_version, pluma_plugins_major_version.pluma_plugins_minor
 
 AC_INIT([pluma-plugins],
         [pluma_plugins_version],
-        [https://github.com/mate-desktop/pluma-plugins/issues],
+        [https://github.com/Libre-MATE/pluma-plugins/issues],
         [pluma-plugins],
-        [https://mate-desktop.org/])
+        [https://github.com/Libre-MATE/pluma-plugins])
 
 AC_CONFIG_HEADERS([config.h])
 AC_CONFIG_SRCDIR([plugins])
