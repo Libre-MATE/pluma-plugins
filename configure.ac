@@ -39,7 +39,7 @@ AM_GNU_GETTEXT([external])
 # ================================================================
 # Gettext stuff.
 # ================================================================
-GETTEXT_PACKAGE=pluma-plugins
+GETTEXT_PACKAGE=AC_PACKAGE_NAME
 AC_SUBST(GETTEXT_PACKAGE)
 AC_DEFINE_UNQUOTED(GETTEXT_PACKAGE,"$GETTEXT_PACKAGE", [Gettext package])
 
