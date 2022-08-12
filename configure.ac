@@ -42,6 +42,7 @@ AM_GNU_GETTEXT([external])
 GETTEXT_PACKAGE=AC_PACKAGE_NAME
 AC_SUBST(GETTEXT_PACKAGE)
 AC_DEFINE_UNQUOTED(GETTEXT_PACKAGE,"$GETTEXT_PACKAGE", [Gettext package])
+AM_CONDITIONAL([USE_NLS], [test "x${USE_NLS}" = "xyes"])
 
 # **********************
 # GLIB_COMPILE_RESOURCES
@@ -246,10 +247,11 @@ echo "
 
 Configuration:
 
-	Source code location:   ${srcdir}
-	Compiler:               ${CC}
-	Prefix:                 ${prefix}
-	Python Plugins Support: ${have_python}
+	Source code location:    ${srcdir}
+	Compiler:                ${CC}
+	Prefix:                  ${prefix}
+	Python Plugins Support:  ${have_python}
+        Native Language support: $USE_NLS
 
 	Plugins:
 	  ${PLUGINS}
