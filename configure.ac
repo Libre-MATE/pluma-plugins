@@ -11,7 +11,7 @@ AC_INIT([pluma-plugins],
         [pluma-plugins],
         [https://github.com/Libre-MATE/pluma-plugins])
 AC_PREREQ([2.63])
-
+AC_COPYRIGHT([Copyright (C) 2022 Libre MATE])
 AC_CONFIG_HEADERS([config.h])
 AC_CONFIG_SRCDIR([plugins])
 AC_CONFIG_MACRO_DIR([m4])
