@@ -1,7 +1,5 @@
 dnl Process this file with autoconf to produce a configure script.
 
-AC_PREREQ([2.63])
-
 m4_define(pluma_plugins_major_version,  1)
 m4_define(pluma_plugins_minor_version,  26)
 m4_define(pluma_plugins_micro_version,  0)
@@ -12,6 +10,7 @@ AC_INIT([pluma-plugins],
         [https://github.com/Libre-MATE/pluma-plugins/issues],
         [pluma-plugins],
         [https://github.com/Libre-MATE/pluma-plugins])
+AC_PREREQ([2.63])
 
 AC_CONFIG_HEADERS([config.h])
 AC_CONFIG_SRCDIR([plugins])
