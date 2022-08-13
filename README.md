@@ -25,7 +25,7 @@ Note:
 - The *terminal* plugin requires the `VTE` (>= 2.91) library.
 - The *sourcecodebrowser* plugin requires `ctags` at runtime.
 
-See the Pluma [README](https://github.com/mate-desktop/pluma/blob/master/README.md) file for more information.
+See the Pluma [README](https://github.com/Libre-MATE/pluma/blob/master/README.md) file for more information.
 
 ## Installation
 
