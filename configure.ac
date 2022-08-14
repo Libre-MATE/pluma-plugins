@@ -31,7 +31,8 @@ AC_CONFIG_HEADERS([config.h])
 AC_CONFIG_SRCDIR([plugins])
 AC_CONFIG_MACRO_DIR([m4])
 AC_PREFIX_PROGRAM([pluma])
-AM_INIT_AUTOMAKE([1.11 tar-ustar dist-xz no-dist-gzip foreign subdir-objects -Wno-portability silent-rules])
+AM_INIT_AUTOMAKE([1.11 tar-ustar dist-xz no-dist-gzip foreign subdir-objects -Wno-portability])
+AM_SILENT_RULES([yes])
 AM_MAINTAINER_MODE([enable])
 
 # Check for programs
