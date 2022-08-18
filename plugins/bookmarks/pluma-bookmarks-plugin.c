@@ -835,20 +835,18 @@ static void remove_bookmark(GtkSourceBuffer *buffer, GtkTextIter *iter) {
 
 static void add_bookmark(GtkSourceBuffer *buffer, GtkTextIter *iter) {
   GtkTextIter start;
-  GtkSourceMark *bookmark;
 
-  if ((bookmark = get_bookmark_and_iter(buffer, iter, &start)) == NULL)
+  if (NULL != get_bookmark_and_iter(buffer, iter, &start))
     gtk_source_buffer_create_source_mark(GTK_SOURCE_BUFFER(buffer), NULL,
                                          BOOKMARK_CATEGORY, &start);
 }
 
 static void toggle_bookmark(GtkSourceBuffer *buffer, GtkTextIter *iter) {
   GtkTextIter start;
-  GtkSourceMark *bookmark = NULL;
 
   g_return_if_fail(buffer != NULL);
 
-  if ((bookmark = get_bookmark_and_iter(buffer, iter, &start)) != NULL)
+  if (NULL != get_bookmark_and_iter(buffer, iter, &start))
     remove_bookmark(buffer, &start);
   else
     add_bookmark(buffer, &start);
